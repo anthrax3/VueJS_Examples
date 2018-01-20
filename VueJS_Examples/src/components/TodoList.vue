@@ -1,0 +1,51 @@
+<template>
+  <div>
+    <h1>Todo List</h1>
+    <div>
+      <label>Add Item:
+        <input v-model="newItemName" placeholder="Item Name">
+      </label>
+      <button v-on:click="addItem();">Add</button>
+    </div>
+
+    <h2>Your Items</h2>
+    <div v-for="item in todoListItems">
+      <p>Item Name: {{item.itemName}} ({{item.itemDescription}})</p>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'TodoList',
+    data() {
+      return {
+        newItemName: '',
+        todoListItems: [{
+            newItemName: 'Test Item 1',
+            itemDescription: 'This is a test item'
+          },
+          {
+            itemName: 'Test Item 2',
+            itemDescription: 'This is a test item'
+          },
+        ]
+      }
+    },
+    methods: {
+      addItem: function () {
+        var self = this;
+
+        var newItem = {
+          itemName: self.newItemName,
+          itemDescription: 'A Manually Added Item'
+        };
+
+        self.todoListItems.push(newItem);
+
+        self.newItemName = '';
+      }
+    }
+  }
+
+</script>
