@@ -6,8 +6,7 @@ import TodoList from '@/components/TodoList'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
@@ -16,6 +15,6 @@ export default new Router({
       path: '/TodoList',
       name: 'TodoList',
       component: TodoList
-    },
+    }
   ]
 })
