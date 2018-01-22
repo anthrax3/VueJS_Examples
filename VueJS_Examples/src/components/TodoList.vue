@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>Todo List</h1>
-    
     <div class="alert alert-primary" role="alert">
       This is a primary alert—check it out!
     </div>
@@ -22,35 +21,35 @@
 
 <script>
 export default {
-  name: "TodoList",
-  data() {
+  name: 'TodoList',
+  data () {
     return {
-      newItemName: "",
+      newItemName: '',
       todoListItems: [
         {
-          newItemName: "Test Item 1",
-          itemDescription: "This is a test item"
+          newItemName: 'Test Item 1',
+          itemDescription: 'This is a test item'
         },
         {
-          itemName: "Test Item 2",
-          itemDescription: "This is a test item"
+          itemName: 'Test Item 2',
+          itemDescription: 'This is a test item'
         }
       ]
-    };
+    }
   },
   methods: {
-    addItem: function() {
-      var self = this;
+    addItem: function () {
+      var self = this
 
       var newItem = {
         itemName: self.newItemName,
-        itemDescription: "A Manually Added Item"
-      };
+        itemDescription: 'A Manually Added Item'
+      }
 
-      self.todoListItems.push(newItem);
+      self.todoListItems.push(newItem)
 
-      self.newItemName = "";
+      self.newItemName = ''
     }
   }
-};
+}
 </script>
